@@ -112,9 +112,14 @@ def winner(board)
 end
 
 def play(board)
-  moves = 0
-  while moves < 9
-  turn(board)
-  moves += 1
+  until over?(board)
+    turn(board)
   end
-end
+  if won?(board) && winner(board) == "X"
+    puts "Congratulations X!"
+  elsif won?(board) && winner(board) == "O"
+    puts "Congratulations O!"
+  elsif draw?(board)
+    puts "Cat's Game!"
+  end
+end 
