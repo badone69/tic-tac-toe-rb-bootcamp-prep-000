@@ -56,12 +56,14 @@ return counter
 end
 
 def current_player(board)
-  if turn_count(board).even?
+  if turn_count(board) % 2 == 0
     return "X"
-  else 
+  else
     return "O"
   end
-end 
+end
+
+
 def won?(board)
   WIN_COMBINATIONS.each do |win_combination|
     if (board[win_combination[0]]==board[win_combination[1]] && board[win_combination[1]]==board[win_combination[2]])&& position_taken?(board,win_combination[0])
