@@ -56,17 +56,14 @@ return counter
 end
 
 def current_player(board)
-<<<<<<< HEAD
   if turn_count(board) == 0 
     return "X"
   elsif turn_count(board) % 2 == 0
     return "X"
   else 
-=======
   if turn_count(board) % 2 
     return "X"
   elsif 
->>>>>>> 6160dfeea255e1fbf84e5618e40282765a3ed8cd
     return "O"
   end
 end
