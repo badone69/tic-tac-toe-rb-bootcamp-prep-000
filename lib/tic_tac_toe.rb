@@ -44,7 +44,17 @@ def turn(board)
     turn(board)
   end
 end
-  
+
+def turn_count(board)
+  counter = 0 
+  board.each do |symbol|
+  if symbol == "X" or symbol == "O"
+    counter += 1 
+  end 
+end
+return counter
+end
+
 def won?(board)
   WIN_COMBINATIONS.each do |win_combination|
     if (board[win_combination[0]]==board[win_combination[1]] && board[win_combination[1]]==board[win_combination[2]])&& position_taken?(board,win_combination[0])
